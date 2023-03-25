@@ -4,7 +4,11 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws Exception {
 
-       String name, birthPlace, birthDate, phoneNumber, city;
+       String name;
+        String birthPlace;
+                String birthDate;
+        String phoneNumber;
+                String city;
        Scanner input = new Scanner(System.in);
        boolean isNext = true;
        String next;
@@ -57,12 +61,7 @@ public class Main {
 
            listSiswa.add(siswa);
 
-           System.out.print("Apakah menambah lagi siswa ? [Y/n] : ");
-           next = input.nextLine();
 
-           if (next.equals("n")) {
-               break;
-           }
 
            if ( siswa.getAge() >= 17 ) {
                totalUpTo17 += 1;
@@ -78,6 +77,13 @@ public class Main {
             }
             if (siswa.city.equals("Bandung")) {
                 totalFromBDG += 1;
+            }
+
+            System.out.print("Apakah menambah lagi siswa ? [Y/n] : ");
+            next = input.nextLine();
+
+            if (next.equals("n")) {
+                break;
             }
 
 
