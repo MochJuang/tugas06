@@ -6,7 +6,7 @@ public class Main {
 
        String name, birthPlace, birthDate, phoneNumber, city;
        Scanner input = new Scanner(System.in);
-       boolean isNext = false;
+       boolean isNext = true;
        String next;
        ArrayList<Siswa> listSiswa = new ArrayList<>();
        ArrayList<String> availableCity = new ArrayList<>();
@@ -38,7 +38,7 @@ public class Main {
            boolean inputCity;
            do {
                System.out.print("Kota (Sukabumi, Bandung, Bogor) : ");
-               city = input.next();
+               city = input.nextLine();
                if (!availableCity.contains(city)) {
                    inputCity = true;
                     System.out.println("Kota tidak tersedia, silahkan input ulang !");
@@ -60,25 +60,24 @@ public class Main {
            System.out.print("Apakah menambah lagi siswa ? [Y/n] : ");
            next = input.nextLine();
 
-           if (next.equals("Y")) {
-               System.out.println(isNext);
-               isNext = true;
+           if (next.equals("n")) {
+               break;
            }
 
            if ( siswa.getAge() >= 17 ) {
-               totalUpTo17++;
+               totalUpTo17 += 1;
            }else {
-               totalUnder17++;
+               totalUnder17 += 1;
            }
 
            if (siswa.city.equals("Sukabumi")) {
-               totalFromSMI++;
+               totalFromSMI += 1;
            }
             if (siswa.city.equals("Bogor")) {
-                totalFromBGR++;
+                totalFromBGR += 1;
             }
             if (siswa.city.equals("Bandung")) {
-                totalFromBDG++;
+                totalFromBDG += 1;
             }
 
 
